@@ -86,4 +86,14 @@ This is the place for you to write reflections:
 
 #### Reflection Subscriber-1
 
+1. Perbedaan `RwLock<>` dan `Mutex<>` terletak pada mekanisme pengaksesan data, `Mutex<>` hanya mengizinkan akses read kepada satu thread pada satu waktu sedangkan `RwLock<>` mengizinkan banyak akses read kepada banyak thread dalam satu waktu selama tidak ada yang thread yang sedang menulis pada waktu yang sama. Pada projek ini kita penggunaan `RwLock<>` akan meningkatkan waktu komputasi jika dibandingkan menggunakan `Mutex<>`
+
+2. Lazy_static berfungsi agat inisiasi static variabel tidak dilakukan saat program dimulai melainkan saat variabel tersebut dibutuhkan sehingga variabel akan diinisiasi saat runtime. Secara default variabel static ataupun non static pada rust bersifat immutable karena alasan thread safety saat melakukan multu threading. 
+
 #### Reflection Subscriber-2
+
+1. Saya belum mengexplore fitur fitur lain dari Rust selain yang dijelaskan pada tutorial ini dan tutorial sebelumnya karena saat ini saya sedang mempelajari hal lain seperti React dan NextJS untuk mengerjakan TK advance programming
+
+2. Ya, penambahan subscriber menjadi lebih mudah dengan menggunakan observer pattern karena kita sudah memisahkan kode untuk publisher dan subscriber sehingga kita dapat menambahkan subscriber tanpa mempengaruhi kode publisher. Untuk penambahan instance main app saya rasa tetap bisa dilakukan karena kita tinggal inisiasi main app baru lalu menambahkan subscriber pada main app tersebut. 
+
+3. Saya belum mencoba untuk membuat test saya sendiri pada Postman atau mengubah collection yang digunakan pada tutorial ini. Namun, saya merasa penggunaan Postman sangat membantu ketika kita ingin mengetes kebenaran data dari API yang kita buat
